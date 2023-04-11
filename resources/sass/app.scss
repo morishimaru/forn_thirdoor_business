@@ -1,0 +1,2594 @@
+// Fonts
+//@import url('https://fonts.bunny.net/css?family=Nunito');
+//@import url('https://db.onlinewebfonts.com/c/a9aca7e1ecdbdf39d9a97fe080562d20?family=Meiryo+UI');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Icons
+//@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@mixin flex-center-center {
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+}
+@mixin flex-between-center {
+    @extend .d-flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+}
+@mixin p-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@mixin form-basic {
+    background-color: #F8F8F8;
+    border-radius: 3px;
+    border: none;
+    &:focus {
+        box-shadow: none;
+    }
+    &::placeholder {
+        color: #cacaca;
+    }
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.login {
+    background: transparent linear-gradient(180deg, #708FB8 0%, #1B3564 100%) 0% 0% no-repeat padding-box;
+    padding: 34px 0;
+
+    .content {
+        @extend .rounded-circle;
+        background: white;
+        box-shadow: 0px 3px 6px #00000029;
+        width: 1013px;
+        margin: 0 auto;
+        padding: 152px 250px 200px 250px;
+        text-align: center;
+    }
+
+    .title {
+        font: normal 18px/23px Meiryo UI;
+        color: #000000;
+        letter-spacing: 1.08px;
+        margin-bottom: 14px;
+    }
+    .logo {
+        width: 198px;
+        height: 198px;
+    }
+    .ver {
+        margin: 13px 0 56px 0;
+        font: normal 21px Tw Cen MT;
+        letter-spacing: 1.26px;
+        color: #172234;
+    }
+    input {
+        background: #F8F8F8;
+        border: none;
+        height: 63px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .btn {
+        display: block;
+        height: 70px;
+        font: normal bold 24px/30px Meiryo UI;
+        letter-spacing: 1.44px;
+        width: 100%;
+        border-radius: 100px;
+        margin: 30px 0 42px 0;
+    }
+    a {
+        color: #000000;
+        font: normal 16px/20px Meiryo UI;
+        letter-spacing: 0.96px;
+    }
+}
+
+.home {
+    @extend .d-flex;
+    background: #F5F5F5;
+    min-height: 100vh;
+
+    .navbars {
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .flex-shrink-0;
+        width: 300px;
+        background: transparent linear-gradient(180deg, #1B3564 0%, #708FB8 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 0px 10px #00000029;
+        .logo {
+            text-align: center;
+            font: normal bold 30px/39px Meiryo UI;
+            color: white;
+            margin-top: 32px;
+            margin-bottom: 5px;
+        }
+        .slogan {
+            text-align: center;
+            font: normal bold 15px/14px Meiryo UI;
+            color: white;
+            margin-bottom: 25px;
+        }
+        .ver {
+            text-align: center;
+            font: normal 13px Tw Cen MT;
+            color: white;
+            letter-spacing: 0.78px;
+            margin-bottom: 46px;
+        }
+        .btn {
+            background: #57959F;
+            height: 60px;
+            border-radius: 100px;
+            padding: 21px 20px;
+            border: none;
+            font: normal bold 16px/20px Meiryo UI;
+            margin-bottom: 37px;
+            width: 216px;
+            i {
+                margin-right: 10px;
+            }
+        }
+        .menu {
+            .item {
+                display: block;
+                text-decoration: none;
+                font: normal normal normal 16px/20px Meiryo UI;
+                padding: 10px 34px;
+                color: white;
+                i {
+                    margin-right: 21px;
+                }
+                &-odd {
+                    background: #172234;
+                    opacity: 0.4;
+                }
+                &-active {
+                    background: #172234;
+                }
+            }
+        }
+        .footer {
+            @extend .mt-auto;
+            background: #283753;
+            box-shadow: 0px 0px 10px #00000029;
+            border-radius: 0px 50px 0px 0px;
+            .top {
+                padding: 18px 0 18px 50px;
+                .text-main {
+                    font: normal 16px/20px Meiryo UI;
+                    letter-spacing: 3.2px;
+                    color: white;
+                    margin-bottom: 5px;
+                }
+                .text-sub {
+                    font: normal 13px/17px Meiryo UI;
+                    letter-spacing: 1.17px;
+                    color: white;
+                    opacity: 0.2;
+                }
+            }
+            .mid {
+                background: #172234;
+                padding: 27px 0 27px 50px;
+                a {
+                    display: block;
+                    font: normal normal normal 16px/20px Meiryo UI;
+                    letter-spacing: 3.2px;
+                    color: white;
+                    opacity: 0.7;
+                    margin-bottom: 15px;
+                }
+                a:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            .bot {
+                @include flex-center-center();
+                padding: 20px 0;
+                img {
+                    width: 100px;
+                }
+            }
+        }
+    }
+
+    .content {
+        width: calc(100vw - 300px);
+        padding: 30px;
+        &-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-left {
+            flex-shrink: 0;
+            width: 800px;
+            margin-right: 30px;
+        }
+        &-right {
+            flex-grow: 1;
+        }
+        &-box {
+            background: #FFFFFF;
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 3px;
+        }
+    }
+
+    .box {
+        background: white;
+        .head {
+            @include flex-between-center();
+            height: 60px;
+            background: #172234;
+            border-radius: 3px 3px 0px 0px;
+            box-shadow: 0px 0px 5px #00000029;
+            padding: 0 30px;
+            .text {
+                font: normal bold 18px/23px Meiryo UI;
+                letter-spacing: 1.08px;
+                color: white;
+                display: flex;
+                flex-shrink: 0;
+                i {
+                    margin-right: 10px;
+                    vertical-align: text-bottom;
+                }
+                .sub {
+                    margin-left: 23px;
+                    font: normal 14px Meiryo UI;
+                    letter-spacing: 0.84px;
+                }
+            }
+            .info {
+                @include flex-center-center();
+                background: #38394B;
+                height: 30px;
+                padding: 0 22px;
+                font: normal 11px/14px Meiryo UI;
+                letter-spacing: 1.43px;
+                color: white;
+            }
+            .btn {
+                @include flex-center-center();
+                height: 40px;
+                font: normal 16px Meiryo UI;
+                letter-spacing: 1.92px;
+                color: white;
+                padding: 0 38px;
+                background: #57959F;
+                border: none;
+                border-radius: 100px;
+                margin-right: -14px;
+            }
+        }
+
+        .body {
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 0 0 3px 3px;
+            &-content {
+                padding: 15px;
+            }
+            &-scroll {
+                overflow: auto;
+            }
+        }
+
+        .block {
+            padding: 15px;
+            border-bottom: 1px solid #E3E3E3;
+            .top {
+                @extend .d-flex;
+                margin-bottom: 15px;
+                .top-img {
+                    @extend .flex-shrink-0;
+                    img {
+                        width: 142px;
+                        height: 66px;
+                    }
+                }
+                .top-body {
+                    @extend .flex-grow-1;
+                    overflow: hidden;
+                    margin-left: 20px;
+                    .title {
+                        @include p-truncate();
+                        margin: 11px 0 9px 0;
+                    }
+                    a {
+                        font: normal bold 18px/23px Meiryo UI;
+                        letter-spacing: 1.08px;
+                        color: #000000;
+                        text-decoration: none;
+                    }
+                    .time {
+                        font: normal 12px/16px Meiryo UI;
+                        letter-spacing: 0.72px;
+                        color: #000000;
+                    }
+                }
+            }
+            .item {
+                @extend .d-flex;
+                @extend .align-items-center;
+                overflow: hidden;
+                margin-bottom: 10px;
+                .tag {
+                    @extend .flex-shrink-0;
+                    @include flex-center-center();
+                    width: 124px;
+                    height: 23px;
+                    font: normal 12px/16px Meiryo UI;
+                    letter-spacing: 0px;
+                    color: #FAFAFA;
+                    border-radius: 3px;
+                    margin-right: 21px;
+                    &-yellow {
+                        background: #DBA53C;
+                    }
+                    &-purple {
+                        background: #7B4A8D;
+                    }
+                    &-green {
+                        background: #7BB93B;
+                    }
+                }
+                .time {
+                    @extend .flex-shrink-0;
+                    font: normal 14px Meiryo UI;
+                    letter-spacing: 0px;
+                    color: #000000;
+                    margin-right: 10px;
+                }
+                .title {
+                    @include p-truncate();
+                    margin-right: 20px;
+                    a {
+                        color: #000000;
+                        font: normal 14px Meiryo UI;
+                    }
+                }
+                i {
+                    margin-left: auto;
+                }
+            }
+            .item:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .item2 {
+            @extend .d-flex;
+            @extend .align-items-center;
+            margin-bottom: 10px;
+            .time {
+                @extend .flex-shrink-0;
+                font: normal 14px Meiryo UI;
+                letter-spacing: 0px;
+                color: #000000;
+                margin-right: 12px;
+            }
+            .tag {
+                @extend .flex-shrink-0;
+                @include flex-center-center();
+                font: normal 12px Meiryo UI;
+                letter-spacing: 0px;
+                color: white;
+                border-radius: 3px;
+                margin-right: 13px;
+                width: 48px;
+                height: 23px;
+                background: #A50E0E;
+            }
+            .title {
+                a {
+                    color: #000000;
+                    font: normal 14px Meiryo UI;
+                }
+            }
+        }
+        .item2:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #172234;
+        border-radius: 100%;
+    }
+    .carousel-indicators .active {
+        opacity: 1;
+        background: #172234;
+    }
+}
+
+.modal {
+    &-dialog {
+        max-width: 1075px;
+    }
+    &-header {
+        display: block;
+        text-align: center;
+        padding: 66px 0 26px 0;
+    }
+    &-title {
+        font: normal bold 18px Meiryo UI;
+        letter-spacing: 1.08px;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+    &-time {
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0px;
+        color: #000000;
+    }
+    &-body {
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0.84px;
+        padding: 52px 61px 30px 61px;
+        line-height: 20px;
+    }
+    &-footer {
+        display: block;
+        text-align: center;
+        padding: 24px 0;
+        .btn {
+            width: 230px;
+            height: 43px;
+            background: #172234;
+            border-radius: 100px;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+        }
+    }
+}
+
+.searchbars {
+    @include flex-between-center();
+    color: white;
+    background: #172234;
+    .back {
+        @include flex-center-center();
+        width: 32px;
+        height: 40px;
+        background: #283753;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    .title {
+        font: normal bold 16px Meiryo UI;
+        letter-spacing: 0.96px;
+    }
+    .search {
+        position: relative;
+        opacity: 0.7;
+        &:focus-within {
+            opacity: 1;
+        }
+        i {
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+        input {
+            width: 207px;
+            height: 26px;
+            border: none;
+            background: #454e5d;
+            border-radius: 100px;
+            padding-left: 40px;
+            color: white;
+            &::placeholder {
+                color: white;
+            }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    .filters {
+        @include flex-center-center();
+        margin: 0 20px 0 15px;
+        .icon {
+            @include flex-center-center();
+            width: 26px;
+            height: 26px;
+            background: white;
+            margin-right: 30px;
+            border-radius: 100%;
+            cursor: pointer;
+            svg {
+                width: 16px;
+            }
+        }
+        .title {
+            margin-right: 12px;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+        }
+        .total {
+            margin-right: 20px;
+            font: normal bold 25px Meiryo UI;
+            letter-spacing: 0px;
+        }
+        .btn {
+            height: 26px;
+            padding: 0 36px;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            border-radius: 100px;
+        }
+    }
+    .checkboxs {
+        @extend .d-flex;
+        @extend .align-items-center;
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0.84px;
+        padding-right: 30px;
+        .total {
+            flex-shrink: 0;
+            margin-right: 25px;
+        }
+        .item {
+            @include flex-center-center();
+            flex-shrink: 0;
+            margin-right: 30px;
+            input {
+                margin-right: 10px;
+            }
+        }
+    }
+    .menu {
+        @extend .d-flex;
+        @extend .align-items-center;
+        .item {
+            @include flex-center-center();
+            flex-shrink: 0;
+            margin-right: 24px;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            opacity: 0.4;
+            &-active {
+                border-bottom: 3px solid white;
+                opacity: 1;
+                padding: 0 5px 3px 5px;
+            }
+            span {
+                margin-left: 9px;
+                padding: 2px 8px;
+                border-radius: 100px;
+                background: white;
+                font: normal bold 12px Meiryo UI;
+                letter-spacing: -0.48px;
+                color: #172234;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        .btn {
+            @include flex-center-center();
+            height: 26px;
+            padding: 0 15px;
+            font: normal 14px/18px Meiryo UI;
+            letter-spacing: 0.84px;
+            color: white;
+            background: #A5870E;
+            border-radius: 100px;
+            margin-right: 15px;
+            &:last-child {
+                margin-right: 30px;
+            }
+            &-blue {
+                background: #5865A4;
+            }
+        }
+    }
+    .datepickers {
+        @include flex-between-center();
+        color: white;
+        margin-right: 30px;
+        padding: 0 20px;
+        background: #38394B;
+        border-radius: 100px;
+        height: 26px;
+        input {
+            border: none;
+            background: none;
+            width: 75px;
+            color: white;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            &:focus-visible {
+                outline: none;
+            }
+        }
+        span {
+            margin: 0 3px;
+        }
+        i {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.cards {
+    @include clearfix();
+    width: max-content;
+    .card {
+        width: 400px;
+        margin-bottom: 0;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+.card {
+    display: block;
+    float: left;
+    width: 32%;
+    box-shadow: 0px 0px 5px #00000029;
+    border: none;
+    margin: 0 15px 15px 0;
+    position: relative;
+    .card-hide {
+        opacity: 0.5;
+    }
+    .card-title {
+        @include p-truncate();
+        font: normal bold 18px Meiryo UI;
+        letter-spacing: 1.08px;
+        margin-bottom: 5px;
+    }
+    .card-text {
+        font: normal 12px Meiryo UI;
+        letter-spacing: 0.72px;
+        margin-bottom: 23px;
+    }
+    .tag {
+        width: 112px !important;
+        height: 34px !important;
+        margin-right: 9px !important;
+    }
+    .marks {
+        color: white;
+        .triangle-wrap {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-bottom-right-radius: var(--bs-card-border-radius);
+            overflow: hidden;
+            width: 76px;
+            height: 76px;
+        }
+        .triangle {
+            width: 0;
+            height: 0;
+            border-bottom: 76px solid #5865A4;
+            border-left: 76px solid transparent;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            &-yellow {
+                border-bottom-color: #A5870E;
+            }
+            &-red {
+                border-bottom-color: #A50E0E;
+            }
+            &-green {
+                border-bottom-color: #5BA458;
+            }
+            &-black {
+                border-bottom-color: #202C41;
+            }
+        }
+        .total {
+            font: normal bold 14px Meiryo UI;
+            letter-spacing: 0px;
+        }
+        .label {
+            font: normal 10px Meiryo UI;
+            letter-spacing: 0.6px;
+        }
+        .info {
+            position: absolute;
+            bottom: 9px;
+            right: 8px;
+            text-align: right;
+        }
+    }
+}
+.card-empty {
+    border: 2px dashed #BCBCBC;
+    height: 326px;
+    background: transparent;
+    padding-top: 75px;
+    text-align: center;
+    font: normal 14px Meiryo UI;
+    letter-spacing: 1.82px;
+    .btn {
+        @include flex-center-center();
+        background: #57959F;
+        box-shadow: 0px 0px 10px #00000029;
+        border-radius: 100px;
+        width: 216px;
+        height: 60px;
+        font: normal bold 16px Meiryo UI;
+        letter-spacing: 1.92px;
+        margin: 64px auto 0 auto;
+        border: none;
+        i {
+            margin-right: 9px;
+        }
+    }
+}
+
+.summary {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    .item {
+        height: 122px;
+        width: 31.5%;
+        background: #283753;
+        text-align: center;
+        box-shadow: 0px 0px 5px #00000029;
+        border-radius: 3px;
+    }
+    .title {
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0.84px;
+        margin: 25px 0 11px 0;
+    }
+    .total {
+        font: normal bold 34px Meiryo UI;
+        letter-spacing: 0px;
+    }
+}
+
+.posted {
+    height: 88px;
+    display: flex;
+    box-shadow: 0px 0px 5px #00000029;
+    &-left {
+        flex-grow: 1;
+        background: white;
+        border-radius: 3px 0 0 3px;
+        color: #000000;
+        text-align: center;
+        .title {
+            text-decoration: underline;
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            margin: 22px 0 9px 0;
+        }
+        .time {
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            span {
+                font: normal bold 14px Meiryo UI;
+                margin-right: 16px;
+            }
+        }
+    }
+    &-right {
+        @include flex-center-center();
+        width: 273px;
+        font: normal 16px Meiryo UI;
+        letter-spacing: 0.96px;
+        color: white;
+        background: #5865A4;
+        border-radius: 0 3px 3px 0;
+        i {
+            margin-right: 17px;
+        }
+    }
+}
+
+.notice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-radius: 3px;
+    background: #DBA53C;
+    color: white;
+    padding: 0 15px 0 24px;
+    &-left {
+        display: flex;
+        align-items: center;
+    }
+    .tag {
+        flex-shrink: 0;
+        font: normal bold 18px Meiryo UI;
+        letter-spacing: 0px;
+        color: #FAFAFA;
+        margin-right: 22px;
+    }
+    .time {
+        flex-shrink: 0;
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0px;
+        margin-right: 10px;
+    }
+    .title {
+        @include p-truncate();
+        text-decoration: underline;
+        letter-spacing: 0px;
+        font: normal 14px Meiryo UI;
+    }
+    &-green {
+        background: #7BB93B;
+    }
+}
+
+.avatars {
+    @extend .clearfix;
+    .item {
+        float: left;
+        margin-right: 19px;
+        margin-bottom: 15px;
+        &:nth-child(6) {
+            margin-right: 0;
+        }
+    }
+    img {
+        border-radius: 100px;
+        width: 76px;
+        height: 76px;
+    }
+    .empty {
+        @include flex-center-center();
+        width: 76px;
+        height: 76px;
+        background: #EBEBEB;
+        border-radius: 100px;
+        font: normal bold 17px Meiryo UI;
+        letter-spacing: 0px;
+        color: #ACACAC;
+    }
+}
+
+.gallery {
+    padding: 22px 24px;
+    border-bottom: 1px solid #E3E3E3;
+    .top {
+        margin-bottom: 12px;
+        img {
+            width: 100%;
+            height: 335px;
+            border-radius: 3px;
+        }
+    }
+    .item {
+        width: 32%;
+        height: 148px;
+        border-radius: 3px;
+    }
+}
+.edit-gallery {
+    padding: 20px 24px;
+    border-bottom: 1px solid #E3E3E3;
+    .item {
+        border-radius: 3px;
+        float: left;
+        width: 32%;
+        height: 148px;
+        margin-right: 16px;
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+    }
+    .empty {
+        @include flex-center-center();
+        background: #F8F8F8;
+        font: normal 14px/18px Meiryo UI;
+        letter-spacing: 0.84px;
+        cursor: pointer;
+        i {
+            font-size: 16px;
+            display: block;
+            margin: 0 0 15px 0;
+        }
+    }
+}
+
+.edit-note {
+    @include flex-between-center();
+    padding: 24px;
+    border-bottom: 1px solid #E3E3E3;
+    .title {
+        @include p-truncate();
+        font: normal bold 18px Meiryo UI;
+        letter-spacing: 1.08px;
+        color: #000000;
+        text-decoration: underline;
+    }
+    i {
+        width: 20px;
+    }
+    .form-control {
+        @include form-basic();
+    }
+}
+
+.tags {
+    @extend .d-flex;
+    &-box {
+        padding: 24px;
+        border-bottom: 1px solid #E3E3E3;
+    }
+    .tag {
+        @include flex-center-center();
+        width: 125px;
+        height: 38px;
+        font: normal 12px Meiryo UI;
+        letter-spacing: 0.72px;
+        color: white;
+        background: #172234;
+        border-radius: 3px;
+        margin-right: 15px;
+    }
+    .form-control {
+        @include form-basic();
+        width: 125px;
+    }
+    .sub {
+        font: normal 11px Meiryo UI;
+        letter-spacing: 0.72px;
+        color: #000000;
+        opacity: 0.4;
+    }
+}
+
+.table-information {
+    padding: 24px;
+    &-bottom {
+        border-bottom: 1px solid #E3E3E3;
+    }
+    .item {
+        display: flex;
+        letter-spacing: 0.84px;
+        color: #000000;
+        margin-bottom: 17px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &-left {
+            flex-shrink: 0;
+            width: 200px;
+            font: normal bold 14px Meiryo UI;
+            .sub {
+                font: normal 12px Meiryo UI;
+                letter-spacing: 0.72px;
+                color: #000000;
+                opacity: 0.4;
+            }
+        }
+        &-right {
+            font: normal 14px/25px Meiryo UI;
+            flex-grow: 1;
+            flex: 1 1 auto;
+        }
+    }
+    .form-select {
+        @include form-basic();
+    }
+    .form-control {
+        @include form-basic();
+        margin-bottom: 5px;
+    }
+}
+
+.shot-info {
+    display: flex;
+    background: white;
+    box-shadow: 0px 0px 5px #00000029;
+    border-radius: 3px;
+    .icon {
+        @include flex-center-center();
+        width: 60px;
+        flex-shrink: 0;
+        background: #AA00FF;
+        border-radius: 3px 0px 0px 3px;
+        i {
+            font-size: 30px;
+            color: white;
+        }
+    }
+    .table-information {
+        padding: 23px 20px;
+        flex-grow: 1;
+        .item {
+            margin-bottom: 5px;
+        }
+        .item-left {
+            width: 250px;
+            font: normal bold 14px/31px Meiryo UI;
+            letter-spacing: 0.84px;
+        }
+    }
+}
+
+.post-summary {
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px #00000029;
+    border-radius: 3px;
+    &-left {
+        flex-grow: 1;
+        display: flex;
+        padding: 15px;
+        .img {
+            width: 284px;
+            margin-right: 32px;
+            img {
+                width: 100%;
+                height: 138px;
+                border-radius: 3px;
+            }
+        }
+        .title {
+            font: normal bold 18px/23px Meiryo UI;
+            letter-spacing: 1.08px;
+            margin: 15px 0 6px 0;
+        }
+        .time {
+            font: normal 14px/18px Meiryo UI;
+            letter-spacing: 0.84px;
+            margin-bottom: 23px;
+        }
+    }
+    &-right {
+        @include flex-center-center();
+        width: 160px;
+        flex-shrink: 0;
+        border-left: 1px solid #DBDBDB;
+        .title {
+            font: normal 14px/18px Meiryo UI;
+            letter-spacing: 0.84px;
+            margin-bottom: 10px;
+        }
+        .total {
+            font: normal bold 41px/52px Meiryo UI;
+            letter-spacing: 0px;
+            text-align: center;
+        }
+    }
+}
+
+.post-filter {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    padding: 30px 0 24px 0;
+    border-bottom: 1px solid #DBDBDB;
+    margin-bottom: 15px;
+
+    .total {
+        font: normal bold 16px Meiryo UI;
+        letter-spacing: 0.96px;
+        margin-right: 20px;
+    }
+    .checkbox {
+        @include flex-center-center();
+        font: normal 14px/18px Meiryo UI;
+        letter-spacing: 0.84px;
+        color: #172234;
+        opacity: 0.4;
+        margin-right: 5px;
+        input {
+            opacity: 0.7;
+            margin-right: 10px;
+        }
+    }
+    .form-select {
+        border-radius: 100px;
+        height: 26px;
+        background-color: #172234;
+        color: white;
+        font: normal 14px Meiryo UI;
+        letter-spacing: 0.84px;
+        margin-right: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        &:focus {
+            box-shadow: none;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.post-content {
+    background: white;
+    box-shadow: 0px 0px 5px #00000029;
+    border-radius: 3px;
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+    .marks {
+        &-hide {
+            opacity: 0.2;
+        }
+        .triangle-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 3px;
+            width: 46px;
+            height: 46px;
+            overflow: hidden;
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 46px solid #172234;
+                border-bottom: 46px solid transparent;
+            }
+        }
+        i {
+            color: white;
+            font-size: 13px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 7px;
+            left: 9px;
+        }
+    }
+    .body {
+        display: flex;
+        flex-grow: 1;
+        padding-right: 23px;
+    }
+    .avatar {
+        margin: 15px 33px 18px 31px;
+        img {
+            width: 130px;
+            height: 130px;
+        }
+    }
+    .title {
+        font: normal bold 18px/23px Meiryo UI;
+        letter-spacing: 1.08px;
+        margin: 21px 0 10px 0;
+    }
+    .time {
+        font: normal 12px/16px Meiryo UI;
+        letter-spacing: 0.72px;
+        margin-bottom: 10px;
+        span {
+            margin-right: 28px;
+        }
+        &-top {
+            margin: 33px 0 20px 0;
+        }
+    }
+    .desc {
+        font: normal 12px/20px Meiryo UI;
+        letter-spacing: 0px;
+        margin-bottom: 20px;
+    }
+    .social {
+        width: 150px;
+        border-left: 1px solid #DBDBDB;
+        flex-shrink: 0;
+        @include flex-center-center();
+        i {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        svg {
+            height: 30px;
+            display: block;
+            margin: auto auto 20px;
+        }
+        .total {
+            font: normal 18px Sans Serif Collection;
+            letter-spacing: 0px;
+        }
+        .author {
+            text-decoration: underline;
+            font: normal 12px/16px Meiryo UI;
+            letter-spacing: 0.72px;
+            margin-bottom: 7px;
+        }
+        .money {
+            font: normal  bold 16px/20px Meiryo UI;
+            letter-spacing: 0px;
+        }
+        &-hide {
+            svg {
+                opacity: 0.2;
+            }
+            .total {
+                font: normal 12px Meiryo UI;
+                letter-spacing: 0.72px;
+            }
+        }
+    }
+    .actions {
+        width: 160px;
+        border-left: 1px solid #DBDBDB;
+        flex-shrink: 0;
+        @include flex-center-center();
+        .btn {
+            @include flex-center-center();
+            height: 55px;
+            width: 136px;
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 100px;
+            font: normal 16px/20px Meiryo UI;
+            letter-spacing: 0px;
+            color: white;
+            border: none;
+            &-danger {
+                background: #A50E0E;
+            }
+            &-primary {
+                background: #57959F;
+            }
+        }
+        .mail {
+            width: 125px;
+            height: 125px;
+            background: #57959F;
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            i {
+                margin: 35px 0 15px 0;
+                font-size: 23px;
+            }
+            .text {
+                font: normal 16px Meiryo UI;
+                letter-spacing: 0px;
+            }
+            .total {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 0px 10px #00000029;
+                border-radius: 100px;
+                padding: 3px 9px;
+                font: normal bold 12px Meiryo UI;
+                letter-spacing: -0.48px;
+                color: #57959F;
+            }
+        }
+    }
+}
+
+.post-popup {
+    background: white;
+    box-shadow: 0px 0px 5px #00000029;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 915px;
+    min-height: 500px;
+    .back {
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        cursor: pointer;
+        i {
+            font-size: 15px;
+        }
+    }
+    .marks {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-right: 46px solid #172234;
+        border-bottom: 46px solid transparent;
+        i {
+            color: white;
+            font-size: 13px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 7px;
+            right: -37px;
+        }
+    }
+    .body {
+        display: flex;
+        padding: 30px 30px 0 30px;
+    }
+    .avatar {
+        margin-right: 33px;
+        img {
+            width: 130px;
+            height: 130px;
+        }
+    }
+    .title {
+        font: normal bold 18px/23px Meiryo UI;
+        letter-spacing: 1.08px;
+        margin: 2px 0 10px 0;
+    }
+    .time {
+        font: normal 12px/16px Meiryo UI;
+        letter-spacing: 0.72px;
+        margin-bottom: 10px;
+        span {
+            margin-right: 28px;
+        }
+    }
+    .desc {
+        font: normal 12px/20px Meiryo UI;
+        letter-spacing: 0px;
+        margin-bottom: 20px;
+    }
+    .status {
+        position: relative;
+        background: #F8F8F8;
+        border-radius: 3px;
+        padding: 15px;
+        margin: 0 30px 25px 30px;
+        &-mark {
+            position: absolute;
+            top: -29px;
+            left: 44px;
+            width: 0;
+            height: 0;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+            border-bottom: 29px solid #F8F8F8;
+        }
+    }
+    .social {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 0px 5px #00000029;
+        margin: 0 30px 15px 30px;
+        display: flex;
+        min-height: 180px;
+        .icon {
+            @include flex-center-center();
+            width: 50px;
+            color: white;
+            border-radius: 3px 0px 0px 3px;
+            i {
+                font-size: 30px;
+            }
+        }
+        &-tiktok {
+            .icon {
+                background: #161616;
+            }
+        }
+        &-instagram {
+            .icon {
+                background: #AA00FF;
+            }
+        }
+        &-youtube {
+            .icon {
+                background: #ED3023;
+            }
+        }
+        &-twitter {
+            .icon {
+                background: #1D9BF0;
+            }
+        }
+    }
+    .images {
+        padding: 15px;
+        border-right: 1px solid #DBDBDB;
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        img {
+            height: 150px;
+            width: auto;
+        }
+    }
+    .no-used {
+        @include flex-center-center();
+        font: normal 18px/23px Meiryo UI;
+        letter-spacing: 1.08px;
+        color: #000000;
+        opacity: 0.4;
+    }
+    .table-information {
+        width: 300px;
+        flex-shrink: 0;
+        .item {
+            margin-bottom: 2px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .item-left {
+            width: 150px;
+        }
+    }
+}
+
+.filters-popup {
+    background: white;
+    box-shadow: 0px 0px 5px #00000029;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    position: absolute;
+    top: 40px;
+    left: 332px;
+    width: 1430px;
+    padding: 33px;
+    .column1 {
+        flex-shrink: 0;
+        width: 470px;
+        padding-right: 50px;
+        border-right: 1px solid #DBDBDB;
+    }
+    .column2 {
+        flex-shrink: 0;
+        width: 330px;
+        padding: 0 50px;
+        border-right: 1px solid #DBDBDB;
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        .text {
+            font: normal bold 16px Meiryo UI;
+            letter-spacing: 0.96px;
+            width: 120px;
+            flex-shrink: 0;
+        }
+        .line {
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #DBDBDB;
+        }
+    }
+    .checkboxs {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        .item {
+            flex-shrink: 0;
+            font: normal 16px Meiryo UI;
+            letter-spacing: 0.96px;
+            margin: 0 15px 15px 0;
+            input {
+                margin-right: 5px;
+            }
+        }
+        &-min {
+            .item {
+                min-width: 87px;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+            .item {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .slider {
+        margin-bottom: 30px;
+        img {
+            width: 100%;
+        }
+        .ui-slider .ui-slider-handle {
+            width: 18px;
+            height: 18px;
+            background: #172234;
+            border-radius: 100%;
+        }
+        .ui-slider-horizontal {
+            height: 0;
+            border: none;
+            border-bottom: 1px solid #172234;
+        }
+        .ui-slider-horizontal .ui-slider-handle {
+            top: -9px;
+        }
+    }
+    .control {
+        display: flex;
+        align-content: center;
+        margin-bottom: 48px;
+        input {
+            @include form-basic();
+            width: 80px;
+            height: 23px;
+            margin-right: 9px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .form-small {
+            width: 50px !important;
+        }
+        span {
+            font: normal 16px Meiryo UI;
+            letter-spacing: 0.96px;
+            margin-right: 9px;
+        }
+    }
+    .column3 {
+        @include flex-center-center();
+        padding-left: 38px;
+        flex-grow: 1;
+        text-align: center;
+        .text {
+            font: normal 14px Meiryo UI;
+            letter-spacing: 0.84px;
+            margin-bottom: 10px;
+        }
+        .total {
+            font: normal bold 45px/57px Meiryo UI;
+            letter-spacing: 0px;
+            margin-bottom: 36px;
+        }
+        .btn {
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 100px;
+            font: normal 14px/40px Meiryo UI;
+            letter-spacing: 0.84px;
+        }
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+    .marks {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-right: 46px solid #172234;
+        border-bottom: 46px solid transparent;
+        i {
+            color: white;
+            font-size: 13px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 7px;
+            right: -37px;
+        }
+    }
+    a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        color: #f1f1f1;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: -8px;
+        left: -25px;
+
+        .fa-solid {
+            height: 11px;
+            width: 3px;
+        }
+    }
+
+    .nav-info {
+        img {
+            width: 128px;
+            height: 128px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+        }
+
+        .nav-info-middle{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 50px;
+            font-size: 12px;
+            div{
+                span{
+                    display: inline-block;
+                    width: 125px;
+                    height: 38px;
+                    background-color: #172234;
+                    text-align: center;
+                    color: #FFFFFF;
+                    line-height: 38px;
+                }
+            }
+        }
+        .nav-info-right {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+            font-size: 12px;
+
+            h3 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+        .nav-info-last{
+            font-size: 16px;
+            color: #FFFFFF;
+            background-color: #57959F;
+            border-radius: 50%;
+            width: 108px;
+            height: 108px;
+            margin-top: 34px;
+            text-align: center;
+            i{
+                font-size: xx-large;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+        }
+
+
+
+        .introduce {
+            font-size: 16px;
+            text-align: left;
+            padding: 15px;
+            background-color: #F8F8F8;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 7px;
+        }
+
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid #F8F8F8;
+            margin-left: 65px;
+            position: absolute;
+            top: 145px;
+        }
+
+    }
+
+    .nav-body {
+        margin-left: 30px;
+        margin-right: 30px;
+
+        .header {
+            font-size: 18px;
+            color: #FFFFFF;
+            font-weight: bold;
+            background-color: #172234;
+            margin-top: 15px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 30px;
+        }
+
+        .progress {
+            display: flex;
+            height: 80px;
+            padding: 15px;
+            color: #FFFFFF;
+            background-color: #FFFFFF;
+            font-size: 25px;
+            font-weight: bold;
+            border-left: 1px solid #E3E3E3;
+            border-right: 1px solid #E3E3E3;
+            border-bottom: 1px solid #E3E3E3;
+            opacity: 1;
+            border-radius: 0px;
+
+            .progress-left-bar {
+                background-color: #EF859B;
+                text-align: center;
+                padding: 8.5px;
+                border-radius: 3px 0px 0px 3px;
+            }
+
+            .progress-right-bar {
+                background-color: #8589EF;
+                text-align: center;
+                padding: 8.5px;
+                border-radius: 0px 3px 3px 0px;
+            }
+
+            .percent {
+                font-size: 16px;
+            }
+        }
+
+        .list-progress-detail {
+            padding: 15px;
+            border-left: 1px solid #E3E3E3;
+            border-right: 1px solid #E3E3E3;
+            border-bottom: 1px solid #E3E3E3;
+
+            .progress-item {
+                margin-bottom: 5px;
+            }
+
+            .progress-number {
+                font-size: 14px;
+                color: #FFFFFF;
+                background-color: #172234;
+                border-radius: 3px;
+                padding-left: 7px;
+                padding-right: 7px;
+                display: inline-block;
+                width: 47px;
+            }
+
+            .progress-label {
+                color: #000000;
+                margin-left: 12px;
+            }
+
+            .progress-detail {
+                display: flex;
+                height: 23px;
+                color: #FFFFFF;
+                background-color: #FFFFFF;
+                font-size: 14px;
+                font-weight: bold;
+                opacity: 1;
+
+                .progress-detail-left-bar {
+                    background-color: #EF859B;
+                    text-align: center;
+                    border-radius: 3px 0px 0px 3px;
+                }
+
+                .progress-detail-right-bar {
+                    background-color: #8589EF;
+                    text-align: center;
+                    border-radius: 0px 3px 3px 0px;
+                }
+
+                .percent {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .statistic {
+            .nav {
+                border: 1px solid #E3E3E3;
+                border-radius: 3px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+
+                .nav-item {
+                    height: 119px;
+                    width: 25%;
+                    border-right: 1px solid #E3E3E3;
+                    button {
+                        text-align: center;
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 100%;
+                        color: #000000;
+                    }
+                    .triangle {
+                        width: 0;
+                        height: 0;
+                        border-left: 16px solid transparent;
+                        border-right: 16px solid transparent;
+                        border-top: 26px solid #172234;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+
+                    .active {
+                        border: none;
+                        background-color: #172234;
+                        border-top-left-radius:0px;
+                        border-top-right-radius:0px;
+                        color: #FFFFFF !important;
+                        position: relative;
+                    }
+                    svg{
+                        height: 30px;
+                    }
+                    .nouse{
+                        font-size: 12px;
+                        margin-top: 21px;
+                    }
+                    .total{
+                        font-size: 18px;
+                    }
+                    .money{
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .tab-pane {
+                margin: 0px;
+
+                .list-box {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .box {
+                    border: 1px solid #E3E3E3;
+                    border-radius: 3px;
+                    height: 272px;
+                    width: 32%;
+                    margin-bottom: 15px;
+                    box-shadow: 0px 0px 5px #00000029;
+                    text-align: center;
+
+                    .text-label {
+                        font-size: 19px;
+                        color: #000000;
+                        margin-top: 30px;
+                    }
+
+                    .text-number {
+                        font-size: 27px;
+                        font-weight: bold;
+                        color: #000000;
+                        background-color: #F8F8F8;
+                        padding-bottom: 17px;
+                        padding-top: 17px;
+                        margin: 19px 20px 12px;
+                    }
+
+                    .text-des {
+                        font-size: 16px;
+                        color: #000000;
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.post-social-info{
+    .row{
+        justify-content: space-around;
+        display: flex;
+    }
+    .no-used{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 18px;
+        opacity: 40%;
+    }
+    .social {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 0px 5px #00000029;
+        margin: 10px;
+        display: flex;
+        height: 180px;
+        width: 48%;
+        padding-left:0px;
+        .images{
+            display: flex !important;
+            padding-left: 10px;
+            padding-right: 10px;
+            img{
+                object-fit: contain;
+                height: 100%; width: 100%;
+            }
+        }
+        .table-information{
+            text-align: center;
+            border-left: 1px solid #DBDBDB;
+            width: 220px;
+            button{
+                height: 55px;
+                width: 136px;
+                box-shadow: 0px 0px 5px #00000029;
+                font-size: 16px;
+            }
+            .btn-p{
+                background-color: #A50E0E;
+                color: #FFFFFF;
+                border-radius: 100px;
+                margin-bottom: 10px;
+            }
+            .btn-s{
+                background-color: #57959F;
+                color: #FFFFFF;
+                border-radius: 100px;
+            }
+            .check{
+                i{
+                    width: 30px;
+                }
+                margin-bottom: 15px;
+            }
+            .text-1{
+                font-size: 14px;
+                color: #000000;
+                margin-bottom: 15px;
+            }
+            .text-2{
+                font-size: 14px;
+                color: #000000;
+                opacity: 40%;
+                text-decoration: underline;
+            }
+        }
+        .icon {
+            @include flex-center-center();
+            width: 50px;
+            color: white;
+            border-radius: 3px 0px 0px 3px;
+            i {
+                font-size: 30px;
+            }
+        }
+        &-tiktok {
+            .icon {
+                background: #161616;
+            }
+        }
+        &-instagram {
+            .icon {
+                background: #AA00FF;
+            }
+        }
+        &-youtube {
+            .icon {
+                background: #ED3023;
+            }
+        }
+        &-twitter {
+            .icon {
+                background: #1D9BF0;
+            }
+        }
+    }
+}
+.post-footer{
+    height: 96px;
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1607843137);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    .row{
+        margin-left: 15px;
+        .post-left{
+            width: 51px;
+            height: 51px;
+            background-color: #E2E2E2;
+            border-radius: 50%;
+        }
+        .post-center{
+            text-align: left;
+            font-size: 14px;
+            color: #000000;
+        }
+        .post-right{
+            font-size: 10px;
+            color: #000000;
+            padding-top: 15px;
+            text-align: right;
+            .post-right-link{
+                color: #000000;
+                margin-right: 15px;
+            }
+            .post-right-date{
+                opacity: 31%;
+            }
+        }
+    }
+}
+.post-searchbars{
+    background-color: #172234;
+    height: 98px;
+    padding-top: 30px;
+    bottom: 0px;
+    left: 300px;
+    right: 0px;
+    position: fixed;
+    padding-right: 30px;
+    input{
+        border: none;
+        border-radius: 0;
+    }
+    .post-searchbars-left{
+        padding-left: 40px;
+        display: flex;
+        input{
+            border-radius: 100px 0px 0px 100px;
+        }
+        button{
+            height: 38px;
+            width: 57px;
+            background-color: #57959F;
+            border-radius: 0px 100px 100px 0px;
+            border: none;
+            .fa-paper-plane{
+                color: white;
+                width: 17px;
+            }
+        }
+    }
+    .post-searchbars-center{
+        display: flex;
+        button{
+            height: 38px;
+            width: 120px;
+            border-radius: 100px 3px 3px 100px;
+            background-color: #57959F;
+            border: none;
+            font-size: 12px;
+        }
+    }
+    .post-searchbars-right{
+        display: flex;
+        button{
+            height: 38px;
+            width: 220px;
+            border-radius: 100px;
+            background-color: #57959F;
+            border: none;
+            font-size: 12px;
+        }
+    }
+}
+.post-categories{
+    display: flex;
+    .post-cat-item{
+        margin-right: 20px;
+        .post-cat-item-label{
+            width: 173px;
+            height: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .post-cat-item-label-1{
+            background-color: #DBA53C;
+        }
+        .post-cat-item-label-2{
+            background-color: #7BB93B;
+        }
+        .post-cat-item-label-3{
+            background-color: #3BB9B5;
+        }
+        .post-cat-item-label-4{
+            background-color: #5865A4;
+        }
+        .post-cat-item-label-5{
+            background-color: #00000029;
+        }
+        .post-cat-item-body{
+            img{
+                width: 150px;
+                height: 70px;
+            }
+            width: 173px;
+            background: white;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1607843137);
+            border-radius: 3px;
+            font-size: 12px;
+            padding: 10px;
+            color: #000000;
+            .post-cat-item-title{
+                font-weight: bold;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+        .post-cat-item-active{
+            background-color: #172234;
+            color: #FFFFFF;
+            position: relative;
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 16px solid transparent;
+                border-right: 16px solid transparent;
+                border-top: 26px solid #172234;
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+
+    }
+}
+.content{
+    overflow: auto;
+    margin-bottom: 100px;
+}
+.line{
+    height: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1607843137);
+    border-radius: 3px;
+}
+#modal-notify{
+    .modal-dialog {
+        width: 387px;
+        margin: 50px auto auto;
+    }
+    .modal-content{
+        min-height: 176px;
+        text-align: center;
+        margin-top: 300px;
+    }
+    .modal-body{
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 10px;
+        .text-4{
+            margin-top: 10px;
+        }
+    }
+}
+#modal-standard{
+    .modal-title{
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .text-1{
+        margin-top: 71px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .text-2{
+        margin-top: 41px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+    .text-number{
+        font-size: 25px;
+        font-weight: bold;
+        margin-left: 12px;
+    }
+    .modal-body{
+        text-align: center;
+    }
+    .modal-dialog {
+        width: 921px;
+        margin: 50px auto auto;
+    }
+    .modal-content{
+        min-height: 685px;
+    }
+    .btn-primary{
+        color: #FFFFFF;
+        background-color: #57959F;
+        border: none;
+    }
+    .text-name{
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 22px;
+    }
+    .text-age{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    .text-3{
+        margin-top: 30px;
+    }
+    .images{
+        margin-top: 59px;
+        margin-bottom: 70px;
+        img{
+            width: 163px;
+            height: 163px;
+        }
+    }
+
+}
+#modal-full-page{
+    .modal-body{
+        text-align: center;
+    }
+    .modal-dialog {
+        margin: 50px auto auto;
+        padding: 30px;
+        width: 1400px;
+    }
+    .modal-content{
+        min-height: 685px;
+    }
+}
+.plan{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    img{
+        width: 200px;
+    }
+    .plan-1, .plan-2{
+        border-right: 1px solid #DBDBDB;
+        padding: 50px;
+    }
+    .plan-3{
+        padding: 50px;
+    }
+    .btn-1{
+        height: 60px;
+        width: 220px;
+        background-color: #E4E4E4;
+        border-radius: 3px;
+        border: none;
+    }
+    .btn-2, .btn-3{
+        height: 60px;
+        width: 220px;
+        background-color: #57959F;
+        border-radius: 30px;
+        border: none;
+    }
+    .text-1{
+        margin-top: 40px;
+    }
+    .text-2{
+        margin-bottom: 55px;
+    }
+    .text-3,.text-4,.text-5,.text-6,.text-7{
+        border-bottom: 1px solid #DBDBDB;
+        margin-bottom: 37px;
+    }
+}
+.payment{
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    .payment-header{
+        text-align: left;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    .payment-header-sub{
+        text-align: left;
+        margin-bottom: 30px;
+        font-weight: bold;
+        margin-top: 100px;
+    }
+    .payment-tag{
+        text-align: left;
+        img{
+            width: 150px;
+        }
+        .btn-primary{
+            width: 180px;
+            height: 40px;
+            background: #57959F 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 3px #3A68FF59;
+            border-radius: 29px;
+            border: none;
+            color: white;
+            margin-right: 5px;
+        }
+        .btn-secondary{
+            width: 180px;
+            height: 40px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 3px #00000029;
+            border-radius: 29px;
+            border: none;
+            color: #000000;
+            margin-right: 5px;
+        }
+    }
+    .payment-type-1,  .payment-type-2{
+        border: 1px solid #DBDBDB;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000000;
+        margin: 10px;
+        .text-1{
+            margin-top: 51px;
+        }
+        .text-2{
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .text-3{
+            margin-bottom: 45px;
+        }
+        button{
+            width: 220px;
+            height: 60px;
+            background: #57959F 0% 0% no-repeat padding-box;
+            border-radius: 30px;
+            border: none;
+        }
+    }
+    .payment-type-3{
+        border: 1px solid #DBDBDB;
+        height: 96%;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000000;
+    }
+}
+.company-info{
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal normal 15px/35px Meiryo UI;
+    letter-spacing: 1.08px;
+    .modal-content{
+        background-color: #000000B3;
+    }
+    img{
+        width: 170px;
+    }
+    .title{
+        font: 15px/35px Meiryo UI;
+        font-weight: bold;
+        text-align: left;
+        letter-spacing: 1.08px;
+        color: #000000;
+    }
+    .row{
+        margin-bottom: 12px;
+    }
+    .left-content{
+        background-color: #FFFFFF;
+        border: 1px solid #DBDBDB;
+        margin-top: 100px;
+        padding: 30px;
+        text-align: left;
+        button{
+            width: 220px;
+            height: 50px;
+            background: #57959F 0% 0% no-repeat padding-box;
+            border-radius: 30px;
+            opacity: 1;
+            border: none;
+        }
+        .btn{
+            text-align: center;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    }
+
+    .right-content-1{
+        background-color: #FFFFFF;
+        border-top: 1px solid #DBDBDB;
+        border-left: 1px solid #DBDBDB;
+        border-right: 1px solid #DBDBDB;
+        padding: 30px;
+        text-align: left;
+    }
+    .right-content-2{
+        background-color: #FFFFFF;
+        border: 1px solid #DBDBDB;
+        padding: 30px;
+        text-align: left;
+        button{
+            width: 220px;
+            height: 50px;
+            background: #57959F 0% 0% no-repeat padding-box;
+            border-radius: 30px;
+            opacity: 1;
+            border: none;
+            text-align: center;
+            display: block;
+            margin: auto;
+            margin-top: 120px;
+            margin-bottom: 65px;
+        }
+    }
+
+
+}
+
+.campaign-gallery {
+    @include clearfix();
+    padding-bottom: 14px;
+    border-bottom: 1px solid #c9cdd4;
+    margin-bottom: 27px;
+    .card {
+        width: 173px;
+        padding: 15px;
+        margin-right: 15px;
+        &-img-top {
+            border-radius: 3px;
+        }
+        &-body {
+            padding: 8px 0 0 0;
+        }
+        &-title {
+            font: normal bold 12px/16px Meiryo UI;
+            letter-spacing: 0.72px;
+            margin-bottom: 4px;
+        }
+        &-text {
+            font: normal 10px Meiryo UI;
+            letter-spacing: 0.6px;
+            margin-bottom: 0;
+        }
+        &-active {
+            background: #172234;
+            color: white;
+        }
+        &-hide {
+            opacity: 0.5;
+        }
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            border-top: 26px solid #172234;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}
+.campaign-summary {
+    @include flex-between-center();
+    margin-bottom: 16px;
+    .socials {
+        display: flex;
+        .social {
+            @include flex-center-center();
+            position: relative;
+            width: 100px;
+            height: 135px;
+            background: white;
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 3px;
+            margin-right: 15px;
+            svg {
+                width: 30px;
+            }
+            &-text {
+                font: normal bold 18px Meiryo UI;
+                letter-spacing: 0px;
+            }
+            &-active {
+                background: #172234;
+                color: white;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 16px solid transparent;
+                border-right: 16px solid transparent;
+                border-top: 26px solid #172234;
+                position: absolute;
+                bottom: -14px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+    .datas {
+        display: flex;
+        .data {
+            background: white;
+            box-shadow: 0px 0px 5px #00000029;
+            border-radius: 3px;
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+            margin-right: 17px;
+            .title {
+                font: normal 15px Meiryo UI;
+                letter-spacing: 1.08px;
+                margin-bottom: 6px;
+            }
+            .total {
+                @include flex-center-center();
+                font: normal bold 20px Meiryo UI;
+                letter-spacing: 0;
+                height: 45px;
+                background: #F8F8F8;
+                border-radius: 3px;
+                margin-bottom: 5px;
+                color: #000;
+            }
+            .desc {
+                margin: auto;
+                width: 100px;
+                font: normal 14px Meiryo UI;
+                letter-spacing: 0.84px;
+                opacity: 0.4;
+            }
+            &-active {
+                background: #57959F;
+                color: white;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+.campaign-chart {
+    background: white;
+    box-shadow: 0px 0px 3px #00000029;
+    border-radius: 3px;
+    padding: 40px 110px;
+    .title {
+        font: normal 18px/23px Meiryo UI;
+        letter-spacing: 0.54px;
+        margin-bottom: 9px;
+    }
+    .total {
+        font: normal bold 54px/68px Meiryo UI;
+        letter-spacing: 1.13px;
+    }
+}
+
+.modal-dialog {
+    max-width: 1620px !important;
+}

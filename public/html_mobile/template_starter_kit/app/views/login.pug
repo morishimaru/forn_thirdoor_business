@@ -1,0 +1,31 @@
+extends layouts/mobile-layout
+
+block vars
+  - title = "Template";
+  - keyword = "Interactive";
+  - description = "Interactive template - Pug/Sass";
+  - menuIndex = 0
+  - scriptpage = 'login'
+
+block container
+  .section.login-page
+    .container
+        .row
+            .col-12
+                .d-flex.justify-content-center.flex-column
+                    img(src='./assets/images/3rdoor_w@3x.png', class="top-logo")
+                    form
+                        .mb-3
+                            input.form-control(type='email')
+                        #show_hide_password.mb-3
+                            input.form-control(type='password')
+                            .input-group-addon
+                                a(href='')
+                                    i.fa.fa-eye-slash(aria-hidden='true')
+
+                        .d-grid.gap-2
+                            button.btn.btn-primary(type='submit') ログイン
+                    a.link-underline-primary(href='#') パスワードをお忘れの方はこちら
+
+                    button.btn.btn-primary.bottom-btn(type='button') 新規会員登録はこちら
+                    img(src='./assets/images/グループ 1329@3x.png', class="bottom-logo")

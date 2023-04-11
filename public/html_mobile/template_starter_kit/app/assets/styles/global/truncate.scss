@@ -1,0 +1,36 @@
+.truncate-text-fade {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-truncate-row] {
+  overflow: hidden;
+  position: relative;
+  &[data-truncate-row-type="fade"] {
+    .after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 70%;
+      display: block;
+    }
+  }
+}
+
+.ellip {
+  display: block;
+  height: 100%;
+}
+
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden;
+}

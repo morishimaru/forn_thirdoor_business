@@ -1,0 +1,22 @@
+/* Overwrite CSS of modal */
+.modal {
+  &.show {
+    .modal-dialog {
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .modal-content {
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.modal-long-content {
+    .modal-content {
+      top: 0;
+      transform: translateY(0);
+    }
+  }
+}

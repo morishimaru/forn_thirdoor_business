@@ -1,0 +1,23 @@
+extends layouts/template
+
+block vars
+  -title = "Sitemap"
+
+block container
+  style.
+    .template {text-transform: uppercase; text-align: center;}
+    .template a {display: block; padding: 15px; margin: 5px; text-decoration: none; background: #fff; color: #111; line-height: 1; transition: background-color .2s ease-in-out;}
+    .template a:hover {background-color: rgba(0,0,0,.4); color: #fafafa;}
+    .template .row {
+      padding: 10px;
+      margin: 10px 0; background-color: rgba(0,0,0,.05)
+    }
+    .template h4 {display: block; width: 100%; text-align: left; margin-top: 1rem;}
+  .container
+    h1 Map
+    h2 Guideline
+    .row
+      h4 Pages
+      +link('Login', 'login.html').col-md-3
+      +link('Register', 'register.html').col-md-3
+      +link('Home', 'home.html').col-md-3

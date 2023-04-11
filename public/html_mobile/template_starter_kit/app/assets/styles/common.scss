@@ -1,0 +1,275 @@
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: $font-fontback;
+    color: $grey-sequence-4;
+    line-height: 1.2;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+
+    .wf-active & {
+        font-family: $font-primary;
+        font-weight: $font-normal;
+    }
+}
+
+* {
+    &:active,
+    :focus {
+        outline: none;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.loading-block {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: fade($white, 80%);
+
+    &.active {
+        display: block;
+    }
+
+    &--1.loading-block {
+        position: absolute;
+        z-index: 1040;
+
+        .loading-block__loader {
+            size: rem-calc(25px);
+            animation: spin .7s linear infinite;
+            border-width: rem-calc(5px);
+            margin: rem-calc(-12.5px 0 0 -12.5px);
+        }
+    }
+
+    &__loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-width: rem-calc(7px);
+        border-style: solid;
+        border-color: $blue;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.is-loading .loading-block--1 {
+    visibility: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.invisible-title {
+    visibility: hidden;
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    opacity: 0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.login-page {
+    background: #F9669C;
+    background: -webkit-linear-gradient(to right, #F9669C, #F9A870);
+    background: linear-gradient(to right, #F9669C, #F9A870);
+
+    height: 100%;
+    padding-right: 56px;
+    padding-left: 56px;
+
+    .container{
+        form{
+            button{
+                background-color: #F6548F;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+                height: 50px;
+                border-radius: 100px;
+                margin-top: 15px;
+            }
+            input{
+                height: 45px;
+                border-radius: 3px;
+                border: none;
+            }
+            input[type=text]{
+                margin-bottom: 15px;
+            }
+        }
+        img.top-logo{
+            width: 176px;
+            height: 177px;
+            display: block;
+            text-align: center;
+            margin: 70px auto 45px;
+        }
+        img.bottom-logo{
+            width: 100px;
+            height: 50px;
+            display: block;
+            text-align: center;
+            margin: 87px auto 0;
+        }
+        .input-group-addon{
+            position: absolute;
+            top:12px;
+            right:10px;
+        }
+        #show_hide_password{
+            position: relative;
+        }
+        .fa-eye-slash,.fa-eye{
+            color: #7F7F7F;
+        }
+        .link-underline-primary{
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+            margin: 31px auto 0;
+            text-decoration-color: #FFFFFF !important;
+        }
+        .bottom-btn{
+            background-color: #BB0EE9;
+            border-radius: 100px;
+            height: 50px;
+            margin-top: 69px;
+            border: none;
+            color: #FFFFFF;
+        }
+    }
+}
+.register-page{
+    h5{
+        text-align: center;
+        margin: 30px auto;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 50px;
+    }
+    label{
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    input[type=text]{
+        height: 37px;
+        margin-bottom: 37px;
+        font-size: 12px;
+    }
+    .modal-header{
+        border-bottom: none;
+    }
+    .modal-body{
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .modal-footer{
+        margin: 152px auto 118px;
+        border-top: none;
+        text-align: center;
+        .btn-primary{
+            background-color: #F6548F;
+            border-radius: 17px;
+            height: 34px;
+            width: 109px;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            margin: 15px;
+        }
+        .btn-secondary{
+            background-color: #FFFFFF;
+            border-radius: 17px;
+            height: 34px;
+            width: 109px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000000;
+            border: 2px solid #00000029;
+            margin: 15px;
+        }
+    }
+}
+.home-page{
+    .header-section{
+        background: #F9669C;
+        background: -webkit-linear-gradient(to right, #F9669C, #F9A870);
+        background: linear-gradient(to right, #F9669C, #F9A870);
+        padding-bottom: 15px;
+        border-radius: 0px 0px 20px 20px;
+        .logo{
+            position: relative;
+            h1{
+                font-weight: bold;
+                font-size: 20px;
+                color: #FFFFFF;
+                text-align: center;
+                padding-top: 20px;
+            }
+            a{
+                position: absolute;
+                top: 22px;
+                right: 16px;
+                i{
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .search{
+            position: relative;
+            input{
+                height: 26px;
+                text-align: center;
+                border-radius: 100px;
+                margin-left: 16px;
+                width: 85%;
+                margin-bottom: 15px;
+
+            }
+            a.link-search{
+                position: absolute;
+                top: 3px;
+                left: 25px;
+                i{
+                    //color: #FFFFFF;
+                }
+            }
+            a.link-sliders{
+                position: absolute;
+                top: 3px;
+                right: 16px;
+                i{
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

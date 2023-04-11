@@ -1,0 +1,10 @@
+.col
+  +link('Popup', '#', 'Popup').btn.btn--primary(data-toggle='modal', data-target='#popup-normal')
+include modal-default
+.col
+  +link('Popup', '#', 'Popup Center').btn.btn--primary(data-toggle='modal', data-target='#popup-center')
+include modal-center
+.col
+  div(data-modal-ajax)
+    +link('Popup', 'javascript:;', 'Popup with Ajax (Plugin)').btn.btn--primary(data-trigger-popup='popup-with-ajax')
+    include modal-with-ajax

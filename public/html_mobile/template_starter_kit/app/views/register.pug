@@ -1,0 +1,33 @@
+extends layouts/mobile-layout
+
+block vars
+  - title = "Template";
+  - keyword = "Interactive";
+  - description = "Interactive template - Pug/Sass";
+  - menuIndex = 0
+  - scriptpage = 'register'
+
+block container
+  .section.register-page
+    .container
+        .row
+            .col-12
+                button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo') Open modal
+                #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLabel.modal-title ID・パスワード再設定
+                            .modal-body
+                                form
+                                    .form-group
+                                        label.col-form-label(for='name') お名前
+                                        input#name.form-control(type='text', placeholder='お名前を入力してください')
+                                    .form-group
+                                        label.col-form-label(for='email') メールアドレス
+                                        input#email.form-control(type='text', placeholder='メールアドレスを入力してください')
+                            .modal-footer
+                                button.btn.btn-primary(type='button') 送信する
+                                button.btn.btn-secondary(type='button' data-dismiss='modal') 戻る
+
+

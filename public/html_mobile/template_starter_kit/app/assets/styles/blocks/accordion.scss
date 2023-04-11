@@ -1,0 +1,32 @@
+.accordion {
+  width: 100%;
+
+  &-multi-col {
+    .col-md-4 {
+      display: block;
+    }
+    .inner {
+      display: none;
+    }
+    .item {
+      &_content {
+        text-align: left;
+        position: relative;
+        .inner {
+          display: none;
+        }
+        @media (max-width: 767px) {
+          position: relative;
+
+        }
+      }
+    }
+    &.accordion-full-width {
+      .item {
+        &_content {
+          width: 100vw;
+        }
+      }
+    }
+  }
+}

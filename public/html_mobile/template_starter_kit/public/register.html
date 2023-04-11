@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Template</title>
+    <meta name="description" content="Interactive template - Pug/Sass">
+    <meta name="keywords" content="Interactive">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <!-- build:css ./assets/styles/internal.min.css inline-->
+    <link rel="stylesheet" href="./assets/styles/internal.css" inline>
+    <!-- endbuild//build:css ./assets/styles/main.min.css
+    -->
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <!-- endbuild-->
+</head>
+<body>
+<noscript>JavaScript is off. Please enable to view full site.</noscript>
+<div class="section register-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">ID・パスワード再設定</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="col-form-label" for="name">お名前</label>
+                                        <input class="form-control" id="name" type="text" placeholder="お名前を入力してください">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label" for="email">メールアドレス</label>
+                                        <input class="form-control" id="email" type="text" placeholder="メールアドレスを入力してください">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="button">送信する</button>
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">戻る</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- main:js -->
+
+<script src="./scripts/main.min.js" defer></script>
+<script src="./scripts/dev/pages/register.js" defer></script>
+<input id="itemTemplatePath" type="hidden" value="./">
+<!-- build:remove-->
+<script>
+    var port = location.port;
+    var s = document.createElement('script'), h = document.getElementsByTagName('head')[0];
+    s.src = 'http://localhost:' + port + '/socket.io/socket.io.js';
+    s.async = true;
+    h.appendChild(s);
+    s.onload = function () {
+        var socket = io.connect('localhost:' + port + '/');
+        socket.on('messages', function (data) {
+            if (data) {
+                location.reload(true);
+            }
+        });
+    }
+</script>
+<!-- endbuild-->
+</body>
+</html>

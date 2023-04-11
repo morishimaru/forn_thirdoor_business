@@ -1,0 +1,44 @@
+include ../mixins/all.pug
+
+block vars
+  -title = 'Template';
+
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title=title
+    meta(name='description', content=description ? description : '')
+    meta(name='keywords', content=keyword ? keyword : '')
+    meta(name='robots', content='index, follow')
+    meta(name='author', content='')
+    link(rel='icon', href='./assets/images/favicon-32x32.png', type='image/x-icon', sizes='32x32')
+    link(rel='icon', href='./assets/images/favicon-16x16.png', type='image/x-icon', sizes='16x16')
+    // build:css ./assets/styles/main.min.css
+    link(rel='stylesheet', href='./assets/styles/main.css')
+    // endbuild
+    style.
+      .template {margin: 20px; background: #eee; font-size: 1.4rem;}
+      .template h1 {text-align: center; text-transform: uppercase; font-size: 2.8rem;}
+      .template h2 {padding: 20px 0 10px; border-bottom: 1px solid #ccc; font-weight: normal; font-size: 2rem;}
+      .color {display: inline-block; margin: 0 5px 5px; padding: 5px; font-size: 16px; color: white;}
+    //[if lte IE 9]> <script src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js'></script><script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script> <![endif]
+    //- script(src='scripts/header-js.min.js')
+  body.template
+    block container
+    // build:remove
+    script(type='text/javascript' src='/socket.io/socket.io.js')
+    script.
+      var socket = io.connect('localhost:3000/');
+      socket.on('messages', function (data) {
+        if(data) {
+          location.reload(true);
+        }
+      });
+    if(scriptpage!== undefined && scriptpage !== '' && scriptpage!==null)
+      script(src='scripts/'+scriptpage+'.min.js',defer)
+    // endbuild
+    //[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
+    noscript JavaScript is off. Please enable to view full site.

@@ -1,0 +1,32 @@
+extends layouts/mobile-layout
+
+block vars
+  - title = "Template";
+  - keyword = "Interactive";
+  - description = "Interactive template - Pug/Sass";
+  - menuIndex = 0
+  - scriptpage = 'home'
+
+block container
+  .section.home-page
+    .container
+        .row
+            .col-12.nopadding
+                    .header-section
+                        .logo
+                            h1 3rdoor
+                            a(href='')
+                                i.fa.fa-bars(aria-hidden='true')
+                        .search
+                            a.link-search(href='')
+                                i.fa.fa-search(aria-hidden='true')
+                            input.form-control(type='text')
+                            a.link-sliders(href='')
+                                i.fa.fa-sliders(aria-hidden='true')
+                    .banner-section
+                    .category-section
+                    .list-section
+                    .nav-section
+
+
+

@@ -1,0 +1,19 @@
+.carousel {
+  height: 400px;
+  width: 750px;
+  margin: 0 auto;
+  .carousel-control {
+    fill: #fff;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0);
+    will-change: transform;
+    transition: transform 250ms ease-in;
+    opacity: 1;
+    svg {
+      height: 64px;
+    }
+  }
+}

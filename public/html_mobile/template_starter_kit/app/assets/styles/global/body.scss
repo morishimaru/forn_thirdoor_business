@@ -1,0 +1,23 @@
+h1 {
+  @include typography-heading__1;
+}
+
+h2 {
+  @include typography-heading__2;
+}
+
+h3 {
+  @include typography-heading__3;
+}
+
+h4 {
+  @include typography-heading__4;
+}
+
+h5 {
+  @include typography-heading__5;
+}
+
+h6 {
+  @include typography-heading__6;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Template</title>
+    <meta name="description" content="Interactive template - Pug/Sass">
+    <meta name="keywords" content="Interactive">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <!-- build:css ./assets/styles/internal.min.css inline-->
+    <link rel="stylesheet" href="./assets/styles/internal.css" inline>
+    <!-- endbuild//build:css ./assets/styles/main.min.css
+    -->
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <!-- endbuild-->
+  </head>
+  <body>
+    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+    <div class="section home-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 nopadding">
+            <div class="header-section">
+              <div class="logo">
+                <h1>3rdoor</h1><a href=""><i class="fa fa-bars" aria-hidden="true"></i></a>
+              </div>
+              <div class="search"><a class="link-search" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
+                <input class="form-control" type="text"><a class="link-sliders" href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="banner-section"></div>
+            <div class="category-section"></div>
+            <div class="list-section"></div>
+            <div class="nav-section"></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- main:js --><!-- endinject -->
+    <script src="./scripts/dev/pages/home.js" defer></script>
+    <input id="itemTemplatePath" type="hidden" value="./">
+    <!-- build:remove-->
+    <script>
+      var port = location.port;
+      var s = document.createElement('script'), h = document.getElementsByTagName('head')[0];
+      s.src = 'http://localhost:' + port + '/socket.io/socket.io.js';
+      s.async = true;
+      h.appendChild(s);
+      s.onload = function () {
+          var socket = io.connect('localhost:' + port + '/');
+          socket.on('messages', function (data) {
+              if (data) {
+                  location.reload(true);
+              }
+          });
+      }
+    </script>
+    <!-- endbuild-->
+  </body>
+</html>
